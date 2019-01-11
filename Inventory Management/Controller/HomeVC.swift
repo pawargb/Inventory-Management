@@ -65,8 +65,8 @@ class HomeVC: UIViewController {
     
     func updateDashboard(){
         
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "dd/MM/yyyy"
+//        let dateformatter = DateFormatter()
+//        dateformatter.dateFormat = "dd/MM/yyyy"
         
         var openCount = 0
         var dueTodayCount = 0
@@ -77,15 +77,7 @@ class HomeVC: UIViewController {
                 openCount += 1
             }
             
-            let dueDate = dateformatter.date(from: obj.dueDate!)
-            print("obj.dueDate : \(obj.dueDate), dueDate : \(dueDate)")
             
-            dateformatter.dateFormat = "dd/MM/yyyy"
-            let today = dateformatter.string(from: Date())
-            
-            if today == dateformatter.string(from: dueDate!){
-                dueTodayCount += 1
-            }
         }
         
         DBopenLabel.text = String(openCount)
